@@ -38,7 +38,7 @@
     messageType : 'geometry_msgs/Twist'
   });
 
-  var twist = new ROSLIB.Message({
+  var moveRight = new ROSLIB.Message({
     linear : {
       x : 1.0,
       y : 0.0,
@@ -51,16 +51,17 @@
     }
   });
 
-
+// implementing functions to move other directions would be similar
   function goRight() {
-	cmdVel.publish(twist);
+	cmdVel.publish(moveRight);
   }
+	
 </script>
 </head>
 
 <body>
   <h1>Control the Turtle</h1>
-  <p>Choose a direction!</p>
+  <p>Choose a direction!</p> 
  <button onclick="goRight()">Right</button> 
 </body>
 </html>
